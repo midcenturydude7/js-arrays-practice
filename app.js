@@ -1,5 +1,5 @@
 export const companies = [
-  { name: "Company One", category: "Finance", start: 1981, end: 2003 },
+  { name: "Company One", category: "Finance", start: 1981, end: 2007 },
   { name: "Company Two", category: "Retail", start: 1992, end: 2008 },
   { name: "Company Three", category: "Auto", start: 1999, end: 2007 },
   { name: "Company Four", category: "Retail", start: 1989, end: 2010 },
@@ -89,6 +89,14 @@ export const ages = [33, 12, 20, 16, 5, 54, 21, 44, 61, 13, 15, 45, 25, 64, 32];
 //   ageSum += ages[i];
 // }
 
-const agesSum = ages.reduce((total, age) => total + age, 0);
+// const agesSum = ages.reduce((total, age) => total + age, 0);
 
-console.log(`The sum of all the ages in the array is: ${agesSum}`);
+// console.log(`The sum of all the ages in the array is: ${agesSum}`);
+
+// Get total years for all companies using reduce
+const totalYears = companies.reduce(
+  (total, company) => total + (company.end - company.start),
+  0
+);
+
+console.log(`The total years for all companies is: ${totalYears}`);
